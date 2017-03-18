@@ -1,0 +1,38 @@
+# Mac OS
+.DS_Store
+
+# Environments
+*.env*
+!.env.sample
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.tar.gz
+*.zip
+*.bzip
+
+# Databases
+*.dump
+
+# CTags
+tags
+.tags
+.tags_sorted_by_file
+
+# RubyMine
+*.idea
+
+# Temp Directories
+tmp
+
+# Logs
+*.log
+
+# Code Coverage
+coverage

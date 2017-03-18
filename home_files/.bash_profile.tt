@@ -1,0 +1,30 @@
+# BASH PROFILE
+
+# Send to .bashrc for all settings.
+if [[ -f $HOME/.bashrc ]]; then
+  . $HOME/.bashrc
+fi
+
+#Starting to test color tab/window based on SSH
+# --Start iTerm Color--
+
+iterm_profile() {
+  # Set tab color to red
+  echo -e "\033]6;1;bg;red;brightness;255\a"
+  # Set window profile
+  echo -e '\033]50;SetProfile='$1'\a' ;
+ }
+
+color_ssh() {
+  iterm_profile SSH
+  ssh $@
+  iterm_profile Default
+}
+
+alias ssh='color_ssh'
+
+# --END iTerm Color--
+
+nametab () {
+  echo -ne "\033]0;"$@"\007"
+}

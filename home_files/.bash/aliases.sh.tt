@@ -1,0 +1,178 @@
+# BASH ALIASES
+
+#
+# MY PERSONAL
+#
+export TODOTXT_DEFAULT_ACTION=ls
+alias cds="cd ~/Scripts"
+
+# This alias reloads this file
+alias reload_bash='. ~/.bash_profile'
+
+# Section: General
+alias ..="cd .."
+alias ...="cd ../.."
+alias cdb="cd -"
+alias c="clear"
+alias h="history"
+alias l="ls -alh"
+alias home="cd $HOME"
+
+# Section: [Homebrew](http://brew.sh)
+alias hb="brew"
+alias hbi="brew install"
+alias hbin="brew info"
+alias hbu="brew uninstall"
+alias hbl="brew list"
+alias hbs="brew search"
+alias hbsw="brew switch"
+alias hbup="brew update --all"
+alias hbug="brew upgrade"
+alias hbp="brew pin"
+alias hbpu="brew unpin"
+alias hbd="brew doctor"
+alias hbc="brew cleanup"
+alias hbrb="brew uninstall ruby-build && brew install --HEAD ruby-build"
+
+# Section: [Git](http://git-scm.com)
+#alias gi="git init"
+#alias gcle="git config --local --edit"
+#alias gcge="git config --global --edit"
+#alias gget="git config"
+alias gs="git status"
+alias gst="git status --short --branch"
+#alias gl='git log --graph --pretty=format:"$(_git_log_line_format)"'
+#alias gld='git log --stat --pretty=format:"$(_git_log_details_format)"'
+#alias glh='git log --pretty=format:%H -1 | _copy_and_print'
+#alias glf='git fetch && git log --reverse --no-merges --pretty=format:"$(_git_log_line_format)" ..@{upstream}'
+#alias glg='git log --pretty=format:"$(_git_log_line_format)" --grep'
+#alias gls='git log --pretty=format:"$(_git_log_line_format)" -S'
+#alias glt='git for-each-ref --sort=taggerdate --format="%(color:yellow)%(refname:short)%(color:reset)|%(taggerdate:short)|%(color:blue)%(color:bold)%(*authorname)%(color:reset)|%(subject)" refs/tags | column -s"|" -t'
+#alias grl="git reflog"
+#alias gg="git grep"
+#alias guthors="git log --format='%an' | sort | uniq -c | sort --reverse"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gdm="git diff origin/master"
+alias gdw="git diff --color-words"
+#alias gdt="git difftool"
+#alias gdtc="git difftool --cached"
+#alias gdtm="git difftool origin/master"
+#alias glame="git blame"
+#alias gbi="git bisect"
+#alias gbis="git bisect start"
+#alias gbib="git bisect bad"
+#alias gbig="git bisect good"
+#alias gbir="git bisect reset"
+#alias gbisk="git bisect skip"
+#alias gbil="git bisect log"
+#alias gbire="git bisect replay"
+#alias gbiv='git bisect visualize --reverse --pretty=format:"$(_git_log_line_format)"'
+#alias gbih="git bisect help"
+alias gb="git branch --verbose"
+#alias gbt="git show-branch --topics"
+#alias gba="git branch --all"
+#alias gbn="_git_branch_name | _copy_and_print"
+#alias gbr="git branch --move"
+#alias gm="git merge"
+#alias gms="git merge --squash"
+#alias gma="git merge --abort"
+alias gcl="git clone"
+#alias gch="git checkout"
+#alias gchm="git checkout master"
+alias ga="git add"
+#alias gau="git add --update"
+#alias gap="git add --patch"
+#alias gall="git add --all ."
+alias gco="git commit"
+#alias gatch="git commit --patch"
+#alias gca="git commit --all"
+#alias gcm="git commit --message"
+#alias gcam="git commit --all --message"
+#alias gcf="git commit --fixup"
+#alias gcs="git commit --squash"
+#alias gamend="git commit --amend"
+#alias gamendh="git commit --all --amend --no-edit"
+#alias gcp="git cherry-pick"
+#alias gcpa="git cherry-pick --abort"
+#alias gashc="git stash clear"
+alias gnl="git notes list"
+alias gns="git notes show"
+alias gna="git notes add"
+alias gne="git notes edit"
+alias gnd="git notes remove"
+alias gnp="git notes prune"
+alias gf="git fetch"
+alias gfp="git fetch --prune"
+alias gpu="git pull"
+#alias gpur="git pull --rebase" # Rebase the current branch on top of the upstream branch.
+#alias gpuro="gpur origin" # Rebase the current branch on top of the upstream origin branch.
+#alias gpurom="gpuro master" # Rebase the current branch on top of the upstream origin master branch.
+#alias grbc="git rebase --continue"
+#alias grbs="git rebase --skip"
+#alias grba="git rebase --abort"
+#alias ger="git rerere"
+alias gp="git push"
+alias gpn="git push --no-verify"
+#alias gpo="git push --set-upstream origin"
+#alias gpr="git push review master"
+#alias gps="git push stage stage:master"
+#alias gpp="git push production production:master"
+#alias gtag="git tag"
+#alias gtagv="git tag --verify"
+#alias gtags="git push --tags"
+#alias gwp="git worktree prune"
+#alias gr="git reset" # Unstage staged files for commit.
+#alias grs="git reset --soft HEAD^" # Undo previous commit.
+#alias grh="git reset --hard HEAD" # Reset to HEAD, destroying all staged/unstaged changes. UNRECOVERABLE!
+#alias gdis="git reset --hard" # Reset to commit, destroying all previous commits. UNRECOVERABLE!
+#alias grm="git reset --merge ORIG_HEAD" # Reset to original HEAD prior to merge.
+#alias grom="git fetch --all && git reset --hard origin/master" # Reset local branch to origin/master branch. UNRECOVERABLE!
+#alias gel="git rm"
+#alias gelc="git rm --cached" # Removes previously tracked file from index after being added to gitignore.
+#alias grev="git revert" # Revert a commit.
+#alias grp="git remote prune origin"
+
+# Section: [Tar](http://www.gnu.org/software/tar/tar.html)
+alias bzc="tar --use-compress-program=pigz --create --preserve-permissions --bzip2 --verbose --file"
+alias bzx="tar --extract --bzip2 --verbose --file"
+
+alias ez="$EDITOR $HOME/.z"
+
+#
+# Folling from https://github.com/donnemartin/dev-setup
+#
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+    colorflag="--color"
+else # OS X `ls`
+    colorflag="-G"
+fi
+
+# List all files colorized in long format
+alias l="ls -lF ${colorflag}"
+
+# List all files colorized in long format, including dot files
+alias la="ls -laF ${colorflag}"
+
+# List only directories
+alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
+
+# Always use color output for `ls`
+alias ls="command ls ${colorflag}"
+export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.ogg=01;35:*.mp3=01;35:*.wav=01;35:'
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
+
+# Get week number
+alias week='date +%V'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# Reload the shell (i.e. invoke as a login shell)
+alias reload="exec $SHELL -l"
