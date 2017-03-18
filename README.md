@@ -3,11 +3,9 @@ Introduction
 -----------------
 .files I use in my profiles for pi
 
-#### The following was inspired by Brooke Kuhlmann (https://github.com/bkuhlmann/dotfiles).
-                   
 GIT Repo Location
 -----------------
-https://github.com/pszaro/pi_dotfiles.git
+https://github.com/pszaro/dotfiles_pi.git
                    
 List of Scripts
 -----------------
