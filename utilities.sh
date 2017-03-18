@@ -5,7 +5,7 @@
 
 # Answers a list of files stored in the home_files folder of this project.
 home_files() {
-  for file in $(find ~/git-repos/ home_files -type f); do
+  for file in $(find ~/git-repos/dotfile_pi home_files -type f); do
     printf "$file\n"
   done
 }
