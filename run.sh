@@ -12,8 +12,8 @@ set -o errexit
 set -o pipefail
 
 # LIBRARY
-source ~/git-repos/dotfile_pi/utilities.sh
-source ~/git-repos/dotfile_pi/options.sh
+source ~/git-repos/dotfiles_pi/utilities.sh
+source ~/git-repos/dotfiles_pi/options.sh
 
 # EXECUTION
 if [[ -d "$HOME" ]]; then
