@@ -4,7 +4,7 @@
 # MY PERSONAL
 #
 export TODOTXT_DEFAULT_ACTION=ls
-alias cds="cd ~/Scripts"
+alias cds="cd ~/scripts"
 
 # This alias reloads this file
 alias reload_bash='. ~/.bash_profile'
